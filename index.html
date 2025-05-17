@@ -1,65 +1,168 @@
-<!DOCTYPE html>    <!-- indica al navegador que este archivo es un documento html5--> 
-<html lang="es"> <!-- indica el idioma del contenido de la pagina -->
-<head>  <!-- seccion de configuraciones -->
-    <meta charset="UTF-8">  <!--  codificacion de catactes como utf-8-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--  configuracion de la vista para dispositivos moviles-->
-    <title>Mi primera pagina web</title> <!--  titulo de la pagina que aparece en la pestaña del navegador-->
-    <link rel="stylesheet" href="style.css"> <!--  enlaza el archivo de estilos css -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav ul li a {
+            background-color: #58c4dc;
+            padding: 5px 10px;
+            border: 1px solid #58c4dc;
+            border-radius: 5px;
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #007ea7;
+            border-color: #007ea7;
+            color: white;
+        }
+
+        main .contenido {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #58c4dc;
+            border-radius: 8px;
+        }
+
+        .bloque {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .bloque a {
+            background-color: #58c4dc;
+            padding: 8px 15px;
+            border: 1px solid #58c4dc;
+            border-radius: 5px;
+            color: black;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .bloque a:hover {
+            background-color: #007ea7;
+            color: white;
+        }
+
+        p {
+            color: red;
+            background-color: blue;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        span {
+            color: yellow;
+            background-color: black;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 10px;
+            border: 1px solid #58c4dc;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #58c4dc;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007ea7;
+            color: white;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #58c4dc;
+        }
+    </style>
 </head>
 <body>
-    <header> <!-- encabezado de la pagina web -->
-        <nav> <!-- barra de navegacion -->
-        <ul> <!-- lista no ordena  --->
-        <li><a href="https://www.starbucks.com.mx/"  target="_blank"> starbucks </a></li>
-        <li><a href="listas.html" target="_blank"> ejemplo1</a></li>
-        <li><a href="tablas.html" target="_blank"> ejemplo2</a></li>
-        <li><a href="iconos.html" target="_blank"> iconos</a></li>
-            </ul>    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
         </nav>
     </header>
-     <main> <!-- contenido principal de la pagina -->
-     <section>
-        <h1> Primer pagina web</h1>
-        <p>Este parrafo esta dentro de una seccion</p>
-     </section>
 
-     <h2> Formulario</h2>
-        <form>
-            
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"> <br>
+    <main>
+        <div class="contenido">
+            <h1>Hola Mundo</h1>
+            <p>Hola <span><a href="https://google.com" class="link_google">persona</a></span></p>
+            <p>Mundo</p>
+            <p>??</p>
+        </div>
 
-            <input type="email" id="nombre" name="email" placeholder="ejemplo@ej.com"> <br>
+        <div>
+            <p>Hola <span><a href="https://google.com" class="link_google">Get Started</a></span> <span>
+                <a class="link_2_google" href="https://otro.com">Learn the basics</a>
+            </span></p>
+        </div>
 
-            <input type="password" id="nombre" name="password" placeholder="contraseña"> <br>
+        <section>
+            <h2>Formulario</h2>
+            <form>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                <input type="email" id="email" name="email" placeholder="ejemplo@ej.com">
+                <input type="password" id="password" name="password" placeholder="Contraseña">
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
 
-            <input type="submit" value="Enviar"> <br>
-        </form>
-    
+        <div class="bloque"><a href="">Falcon 0</a></div>
+        <div class="bloque"><a href="">Falcon Heavy</a></div>
+        <div class="bloque"><a href="">Dragon</a></div>
+        <div class="bloque"><a href="">Starship</a></div>
+    </main>
 
-    <h3> ¿Como se creo este formulario?</h3>
-     <pre>
-
-        <code>  <!-- &lt;  es equivalente a <  y &gt; es para > para que aparezca en el documento sin convertise en etiqueta --> 
-
-            &lt;fomr&gt;  <!-- etiqueta de formulario -->   
-            &lt;input type="text" id="nombre" name="nombre" placeholder="Tu nombre"&gt; &lt;br&gt; <!-- campo de texto para el nombre -->
-            &lt;input type="email" id="nombre" name="email" placeholder="="ejemplo@ej.com"&gt; &lt;br&gt; <!-- campo de texto para el email -->
-            &lt;input type="password" id="nombre" name="password" placeholder="contraseña"&gt; &lt;br&gt; <!-- campo de texto para la contraseña -->
-            &lt;input type="submit" value="Enviar"&gt; &lt;br&gt; <!-- boton de enviar -->
-            &lt;/form&gt; <!-- cierre de la etiqueta de formulario -->
-
-     </code>  
-
-     </pre> 
-
-
-
-
-     </main>
-  <footer> <!-- pie de pagina -->
-      
-
-  </footer>
-
+    <footer>
+        <p>&copy; 2025 Mi Primera Página Web. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
