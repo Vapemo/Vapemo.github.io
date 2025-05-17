@@ -1,168 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mi primera página web</title>
 
     <style>
+        /* Estilos generales */
         body {
-            background-color: black;
-            color: white;
             font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        header nav ul {
-            list-style: none;
+            background-color: #f9f9f9;
+            color: #222;
+            margin: 0;
             padding: 0;
-            margin: 0 0 20px 0;
+        }
+
+        header {
+            background-color: #e0f0ff;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
             display: flex;
-            gap: 15px;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
         }
 
-        header nav ul li a {
-            background-color: #58c4dc;
-            padding: 5px 10px;
-            border: 1px solid #58c4dc;
-            border-radius: 5px;
-            color: black;
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            color: #007acc;
+            font-weight: bold;
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
-        header nav ul li a:hover {
-            background-color: #007ea7;
-            border-color: #007ea7;
+        nav a:hover {
+            background-color: #007acc;
             color: white;
+            border-color: #005f99;
         }
 
-        main .contenido {
-            background-color: black;
-            color: white;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #58c4dc;
-            border-radius: 8px;
+        main {
+            max-width: 700px;
+            margin: 25px auto;
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
         }
 
-        .bloque {
-            display: inline-block;
-            margin: 10px;
+        h1, h2, h3 {
+            color: #003d66;
         }
 
-        .bloque a {
-            background-color: #58c4dc;
-            padding: 8px 15px;
-            border: 1px solid #58c4dc;
-            border-radius: 5px;
-            color: black;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .bloque a:hover {
-            background-color: #007ea7;
-            color: white;
-        }
-
-        p {
-            color: red;
-            background-color: blue;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-        span {
-            color: yellow;
-            background-color: black;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background-color: #222;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        input[type="text"], input[type="email"], input[type="password"] {
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"] {
+            display: block;
+            width: 100%;
+            max-width: 400px;
             padding: 10px;
-            border: 1px solid #58c4dc;
-            border-radius: 5px;
-            background-color: #333;
-            color: white;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
         }
 
-        input[type="submit"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #58c4dc;
-            color: black;
+        form input[type="submit"] {
             cursor: pointer;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: bold;
             transition: background-color 0.3s ease;
         }
 
-        input[type="submit"]:hover {
-            background-color: #007ea7;
-            color: white;
+        form input[type="submit"]:hover {
+            background-color: #005f99;
+        }
+
+        pre {
+            background-color: #e7f0ff;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+            color: #004080;
         }
 
         footer {
-            margin-top: 20px;
             text-align: center;
-            color: #58c4dc;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
+
     <header>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="https://www.starbucks.com.mx/" target="_blank">Starbucks</a></li>
+                <li><a href="listas.html" target="_blank">Ejemplo1</a></li>
+                <li><a href="tablas.html" target="_blank">Ejemplo2</a></li>
+                <li><a href="iconos.html" target="_blank">Iconos</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="contenido">
-            <h1>Hola Mundo</h1>
-            <p>Hola <span><a href="https://google.com" class="link_google">persona</a></span></p>
-            <p>Mundo</p>
-            <p>??</p>
-        </div>
-
-        <div>
-            <p>Hola <span><a href="https://google.com" class="link_google">Get Started</a></span> <span>
-                <a class="link_2_google" href="https://otro.com">Learn the basics</a>
-            </span></p>
-        </div>
-
         <section>
-            <h2>Formulario</h2>
-            <form>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
-                <input type="email" id="email" name="email" placeholder="ejemplo@ej.com">
-                <input type="password" id="password" name="password" placeholder="Contraseña">
-                <input type="submit" value="Enviar">
-            </form>
+            <h1>Primer página web</h1>
+            <p>Este párrafo está dentro de una sección.</p>
         </section>
 
-        <div class="bloque"><a href="">Falcon 0</a></div>
-        <div class="bloque"><a href="">Falcon Heavy</a></div>
-        <div class="bloque"><a href="">Dragon</a></div>
-        <div class="bloque"><a href="">Starship</a></div>
+        <h2>Formulario</h2>
+        <form>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+            <input type="email" id="email" name="email" placeholder="ejemplo@ej.com" />
+            <input type="password" id="password" name="password" placeholder="Contraseña" />
+            <input type="submit" value="Enviar" />
+        </form>
+
+        <h3>¿Cómo se creó este formulario?</h3>
+        <pre><code>
+&lt;form&gt;
+    &lt;input type="text" id="nombre" name="nombre" placeholder="Tu nombre"&gt;&lt;br&gt;
+    &lt;input type="email" id="email" name="email" placeholder="ejemplo@ej.com"&gt;&lt;br&gt;
+    &lt;input type="password" id="password" name="password" placeholder="Contraseña"&gt;&lt;br&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+        </code></pre>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mi Primera Página Web. Todos los derechos reservados.</p>
+        <p>© 2025 Mi primera página web</p>
     </footer>
+
 </body>
 </html>
+
