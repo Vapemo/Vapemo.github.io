@@ -14,8 +14,6 @@ Puedes ver el proyecto final desplegado en la siguiente URL(github.io):
 
 Puedes ver el proyecto final desplegado en la siguiente URL(Netlify,):
 
-[https://vapemo.github.io/](https://vapemo.github.io/)
-
 https://proyectofinalvaleperez.netlify.app/
 
 #### Pasos realizados en Netlify
