@@ -1,26 +1,414 @@
-p{
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap'); /* Importa la fuente Inter de Google Fonts */
 
-    background-color: aquamarine;
+* { /* Selector universal: aplica a todos los elementos */
+	padding: 0; /* Elimina el padding por defecto */
+	margin: 0; /* Elimina el margin por defecto */
+	box-sizing: border-box; /* Incluye padding y border en el ancho y alto */
 }
 
-header{
-    background-color: #333;
-    color : white;
+:root { /* Variables CSS globales */
+	--primary-color: #1c1f4c; /* Color principal (azul oscuro) */
+	--text-color: #333333; /* Color del texto */
+	--accent-color: #4b0082; /* Color de acento (morado) */
 }
 
-a{
-    color: white;
+html { /* Estilos para el elemento raíz */
+	font-size: 10px; /* Tamaño base de fuente */
+	scroll-behavior: smooth; /* Scroll suave al hacer anclas */
 }
 
-nav ul li{
-    list-style-type: none; 
-    display: inline;
-    text-decoration: none;
+body { /* Estilos para el cuerpo de la página */
+	font-family: Inter, sans-serif; /* Tipografía Inter */
+	background-color: #cfdcfc; /* Color de fondo claro */
+	color: var(--text-color); /* Color del texto según variable */
+	animation: fadeIn 1s ease-in; /* Animación de aparición */
 }
 
-li{
-    padding: 50px;
-    text-decoration: none;
+/* ANIMACIONES */
+@keyframes fadeIn { /* Definición de la animación fadeIn */
+	from { opacity: 0; transform: translateY(10px); } /* Empieza invisible y desplazado */
+	to   { opacity: 1; transform: translateY(0); } /* Termina visible en posición original */
 }
 
+@keyframes popIn { /* Definición de la animación popIn */
+	0%   { transform: scale(0.9); opacity: 0; } /* Empieza pequeño e invisible */
+	100% { transform: scale(1);   opacity: 1; } /* Termina en tamaño normal y visible */
+}
 
+/* common styles */
+img {
+	width: 100%; /* Las imágenes ocupan todo el ancho de su contenedor */
+}
+
+a { /* Enlaces */
+	text-decoration: none; /* Sin subrayado */
+	color: var(--primary-color); /* Color principal */
+	transition: color 0.3s ease; /* Transición suave en color */
+}
+
+a:hover {
+	color: var(--accent-color); /* Cambia al color de acento al pasar el ratón */
+}
+
+.description { /* Clase para párrafos descriptivos */
+	margin-top: 1rem; /* Margen superior */
+	font-size: 1.5rem; /* Tamaño de fuente */
+	font-weight: 400; /* Grosor de fuente normal */
+	color: var(--text-color); /* Color del texto */
+	animation: fadeIn 1.5s ease; /* Animación de aparición */
+}
+
+.title { /* Clase para títulos */
+	color: var(--primary-color); /* Color principal */
+	font-weight: 700; /* Fuente negrita */
+	font-size: 2rem; /* Tamaño de fuente grande */
+	text-transform: uppercase; /* Texto en mayúsculas */
+	animation: fadeIn 1s ease; /* Animación de aparición */
+	border-bottom: 2px solid transparent; /* Línea inferior transparente */
+	transition: border-color 0.3s ease; /* Transición para el borde */
+}
+
+.title:hover {
+	border-color: var(--accent-color); /* Borde inferior morado al pasar el ratón */
+}
+
+.item_preTitle,
+.item_title,
+.item_subtitle { /* Animación para elementos de colección */
+	animation: fadeIn 1s ease; /* Animación de aparición */
+}
+
+.item_preTitle { /* Subtítulos pequeños (fechas) */
+	font-size: 1.4rem; /* Tamaño de fuente medio */
+	color: #555; /* Gris medio */
+	font-weight: 300; /* Grosor ligero */
+}
+
+.item_title { /* Títulos de elementos */
+	font-size: 1.6rem; /* Tamaño de fuente */
+	color: var(--primary-color); /* Color principal */
+	font-weight: 500; /* Grosor medio */
+	margin: 0.8rem 0; /* Margen vertical */
+	border-bottom: 2px solid transparent; /* Borde inferior transparente */
+	transition: border-color 0.3s ease; /* Transición del borde */
+}
+
+.item_title:hover {
+	border-color: var(--accent-color); /* Borde inferior morado al hover */
+}
+
+.item_subtitle { /* Subtítulos de elementos */
+	font-size: 1.4rem; /* Tamaño de fuente medio */
+	color: #555; /* Gris medio */
+	font-weight: 400; /* Grosor normal */
+}
+
+/* layouts */
+.container { /* Contenedor principal */
+	max-width: 1000px; /* Ancho máximo */
+	width: 90%; /* 90% del ancho de la pantalla */
+	margin: 0 auto; /* Centrado horizontal */
+	padding: 5rem; /* Espaciado interno */
+	background: #cfdcfc; /* Color de fondo */
+	display: flex; /* Flexbox */
+	flex-direction: column; /* Disposición vertical */
+	gap: 4rem; /* Separación entre hijos */
+	animation: fadeIn 1s ease; /* Animación de aparición */
+}
+
+.columns { /* Sección de columnas */
+	display: grid; /* Grid Layout */
+	grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+	gap: 4rem; /* Separación entre columnas */
+}
+
+@media only screen and (max-width: 768px) {
+	.columns { /* Responsive para móviles */
+		grid-template-columns: 1fr; /* Una columna */
+	}
+	.container {
+		padding: 3rem; /* Menos padding en móvil */
+		gap: 7rem; /* Más separación vertical */
+	}
+}
+
+.profile { /* Sección de perfil */
+	width: 100%; /* Ocupa todo el ancho */
+	margin-bottom: 2rem; /* Separación inferior */
+	animation: popIn 0.8s ease; /* Animación pop */
+}
+
+.profile_container { /* Contenedor interno del perfil */
+	display: flex; /* Flexbox */
+	gap: 2rem; /* Separación entre items */
+	align-items: center; /* Centrado vertical */
+}
+
+@media only screen and (max-width: 768px) {
+	.profile_container {
+		flex-direction: column; /* Vertical en móvil */
+	}
+}
+
+.group-1,
+.group-2 { /* Grupos de secciones */
+	display: flex; /* Flexbox */
+	flex-direction: column; /* Vertical */
+	gap: 5rem; /* Separación entre secciones */
+	animation: fadeIn 1s ease; /* Animación de aparición */
+}
+
+.group-3 { /* Grupo final */
+	max-width: 700px; /* Ancho máximo */
+	width: 100%; /* Ancho completo */
+	margin: 0 auto; /* Centrado */
+	display: flex; /* Flexbox */
+	flex-direction: row; /* Horizontal */
+	gap: 5rem; /* Separación */
+	animation: fadeIn 1s ease; /* Animación de aparición */
+}
+
+.group-3 > div { /* Hijos de grupo-3 */
+	flex: 1; /* Igual distribución */
+}
+
+@media only screen and (max-width: 768px) {
+	.group-3 {
+		flex-direction: column; /* Vertical en móvil */
+	}
+}
+
+/* profile */
+.profile_profileImg { /* Contenedor de imagen de perfil */
+	max-width: 250px; /* Ancho máximo */
+	aspect-ratio: 1/1; /* Proporción cuadrada */
+	border-radius: 50%; /* Círculo */
+	overflow: hidden; /* Oculta parte sobrante */
+	display: flex; /* Flexbox */
+	justify-content: center; /* Centrado horizontal */
+	align-items: center; /* Centrado vertical */
+	margin: 0 auto; /* Centrado */
+	transition: transform 0.3s ease, filter 0.3s ease; /* Transiciones suaves */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Sombra */
+	animation: popIn 1s ease; /* Animación pop */
+}
+
+.profile_profileImg:hover { /* Hover sobre el contenedor de imagen */
+	filter: brightness(1.1); /* Aclara la imagen */
+	transform: scale(1.05) rotate(1deg); /* Escala y rota ligeramente */
+}
+
+.profile_profileImg img { /* La imagen dentro */
+	width: 100%; /* Ocupa todo el contenedor */
+	height: 100%; /* Ocupa todo el contenedor */
+	object-fit: cover; /* Ajusta proporción */
+	transition: transform 0.5s ease; /* Transición suave */
+}
+
+.profile_profileImg img:hover {
+	transform: scale(1.05); /* Escala la imagen en hover */
+}
+
+.profile_name_firstName { /* Nombre de pila */
+	color: #555; /* Gris medio */
+	font-weight: 200; /* Ligero */
+	font-size: clamp(2rem, 8vw, 4rem); /* Escalable */
+	text-transform: uppercase; /* Mayúsculas */
+	display: block; /* Bloque */
+	margin-bottom: -0.8rem; /* Superpone ligeramente */
+}
+
+.profile_name_lastName { /* Apellido */
+	color: var(--primary-color); /* Color principal */
+	font-weight: 500; /* Media */
+	font-size: clamp(2.5rem, 15vw, 7rem); /* Escalable */
+	text-transform: uppercase; /* Mayúsculas */
+	display: block; /* Bloque */
+}
+
+.profile_title { /* Subtítulo del perfil */
+	font-size: 1.5rem; /* Tamaño */
+	font-weight: 400; /* Normal */
+	text-transform: uppercase; /* Mayúsculas */
+	color: var(--accent-color); /* Color de acento */
+}
+
+.downloadBtn { /* Botón de descarga */
+	display: inline-block; /* En línea bloque */
+	text-decoration: underline; /* Subrayado */
+	font-size: 1.6rem; /* Tamaño */
+	margin-top: 1rem; /* Margen superior */
+	color: var(--primary-color); /* Color principal */
+	border: 2px solid var(--primary-color); /* Borde */
+	padding: 0.5rem 1rem; /* Padding */
+	border-radius: 8px; /* Bordes redondeados */
+	transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Transiciones */
+}
+
+.downloadBtn:hover {
+	color: white; /* Texto blanco */
+	background: var(--primary-color); /* Fondo color primario */
+	transform: translateY(-3px); /* Sube ligeramente */
+}
+
+/* Expertise */
+.skills_list {
+	margin-top: 1rem; /* Margen superior */
+	margin-left: 2rem; /* Sangría */
+	line-height: 2; /* Altura de línea */
+}
+
+/* Ref */
+.ref_item {
+	margin-top: 2rem; /* Margen superior */
+}
+
+.ref_name {
+	font-size: 1.6rem; /* Tamaño de fuente */
+	font-weight: 700; /* Negrita */
+}
+
+/* education */
+.edu_item {
+	margin-top: 2rem; /* Margen superior */
+}
+
+/* certification */
+.certification_item {
+	margin-top: 2rem; /* Margen superior */
+}
+
+/* exp */
+.exp_item {
+	margin-top: 2rem; /* Margen superior */
+}
+
+/* awards */
+.awards_item {
+	margin-top: 2rem; /* Margen superior */
+}
+
+.awards ul li {
+	margin-bottom: 1rem; /* Espacio entre ítems de intereses académicos */
+	line-height: 1.6; /* Altura de línea */
+}
+
+/* Interests */
+.interest_items {
+	margin-top: 2rem; /* Margen superior */
+	display: flex; /* Flexbox */
+	align-items: center; /* Centrado vertical */
+	flex-wrap: wrap; /* Permite múltiples filas */
+	gap: 2rem; /* Separación entre ítems */
+}
+
+.interest_item {
+	font-size: 1.5rem; /* Tamaño */
+	display: flex; /* Flexbox */
+	flex-direction: column; /* Vertical */
+	align-items: center; /* Centrado */
+	justify-content: center; /* Centrado */
+	gap: 0.5rem; /* Separación interna */
+	color: var(--primary-color); /* Color principal */
+	transition: transform 0.3s ease, color 0.3s ease; /* Transiciones */
+	cursor: pointer; /* Cursor puntero */
+}
+
+.interest_item:hover {
+	transform: scale(1.1); /* Amplía en hover */
+	color: var(--accent-color); /* Cambia color */
+}
+
+.interest_item svg {
+	width: 2rem; /* Tamaño del ícono */
+	transition: transform 0.3s ease; /* Transición */
+}
+
+.interest_item:hover svg {
+	transform: rotate(10deg); /* Rota en hover */
+}
+
+/* socials */
+.social_items {
+	margin-top: 2rem; /* Margen superior */
+}
+
+.social_item {
+	margin-top: 1.5rem; /* Margen superior */
+	font-size: 1.5rem; /* Tamaño */
+	display: flex; /* Flexbox */
+	gap: 0.5rem; /* Separación */
+	align-items: center; /* Centrado */
+	justify-content: flex-start; /* Alineación horizontal */
+	color: #555; /* Gris */
+	transition: color 0.3s ease, transform 0.3s ease; /* Transiciones */
+	cursor: pointer; /* Puntero */
+}
+
+.social_item:hover {
+	color: var(--primary-color); /* Color primario */
+	transform: translateX(5px); /* Desplaza a la derecha */
+}
+
+.social_item svg {
+	width: 2rem; /* Tamaño del ícono */
+	transition: transform 0.3s ease; /* Transición */
+}
+
+.social_item:hover svg {
+	transform: rotate(-10deg); /* Rota en hover */
+}
+
+hr {
+	width: 80%; /* Ancho de la línea */
+	margin: 5rem auto 1rem auto; /* Margen vertical y centrado */
+	border: none; /* Sin borde */
+	border-top: 2px solid rgba(128, 128, 128, 0.229); /* Línea superior semitransparente */
+}
+
+/* === MODO OSCURO === */
+body.dark-mode {
+  background-color: #1e1e1e; /* Fondo oscuro */
+  color: #f1f1f1  !important;/* Texto claro forzado  */
+}
+
+body.dark-mode a {
+  color: #f5b5ff; /* Enlaces en modo oscuro */
+}
+
+body.dark-mode .container {
+  background-color: #2c2c2c; /* Contenedor oscuro */
+}
+
+body.dark-mode .title {
+  color: #ffffff; /* Títulos blancos */
+}
+
+body.dark-mode .item_title,
+body.dark-mode .profile_name_lastName,
+body.dark-mode .profile_title {
+  color: #f1f1f1;
+}
+
+body.dark-mode .downloadBtn {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+body.dark-mode .downloadBtn:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+/* forzar texto a  blanco */
+.dark-mode .description,
+.dark-mode .title,
+.dark-mode .ref_name,
+.dark-mode .item_title,
+.dark-mode .item_subtitle,
+.dark-mode .item_preTitle,
+.dark-mode .skills_list li,
+.dark-mode .contact_info p,
+.dark-mode .social_item,
+.dark-mode .interest_item span {
+  color: white !important;
+}
