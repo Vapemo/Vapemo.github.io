@@ -1,156 +1,214 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Declara que el documento es HTML5 -->
+<html lang="en"> <!-- Idioma del documento: inglés -->
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mi primera página web</title>
-
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #222;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #e0f0ff;
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            gap: 20px;
-        }
-
-        nav li {
-            margin: 0;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #007acc;
-            font-weight: bold;
-            padding: 10px 18px;
-            border-radius: 6px;
-            border: 1px solid transparent;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #007acc;
-            color: white;
-            border-color: #005f99;
-        }
-
-        main {
-            max-width: 700px;
-            margin: 25px auto;
-            background-color: white;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-        }
-
-        h1, h2, h3 {
-            color: #003d66;
-        }
-
-        form input[type="text"],
-        form input[type="email"],
-        form input[type="password"] {
-            display: block;
-            width: 100%;
-            max-width: 400px;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1rem;
-        }
-
-        form input[type="submit"] {
-            cursor: pointer;
-            background-color: #007acc;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        form input[type="submit"]:hover {
-            background-color: #005f99;
-        }
-
-        pre {
-            background-color: #e7f0ff;
-            padding: 15px;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-family: Consolas, monospace;
-            color: #004080;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 50px;
-        }
-    </style>
+  <meta charset="UTF-8" /> <!-- Configura la codificación UTF-8 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Compatibilidad con IE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ajuste responsivo en móviles -->
+  <title>Resume Valeria Pérez Mondragón</title> <!-- Título de la pestaña -->
+  <script src="https://unpkg.com/feather-icons"></script> <!-- Importa íconos Feather -->
+  <link rel="stylesheet" href="style.css" /> <!-- Enlaza el archivo de estilos -->
+  <script src="script.js"></script><!-- JS personalizado -->
 </head>
+
 <body>
+  <div class="container"> <!-- Contenedor principal del CV -->
+ 
+    <div class="profile"> <!-- Sección del perfil -->
+      <div class="profile_container"> <!-- Contenedor con imagen y datos -->
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="https://www.starbucks.com.mx/" target="_blank">Starbucks</a></li>
-                <li><a href="listas.html" target="_blank">Ejemplo1</a></li>
-                <li><a href="tablas.html" target="_blank">Ejemplo2</a></li>
-                <li><a href="iconos.html" target="_blank">Iconos</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="profile_profileImg"> <!-- Imagen de perfil -->
+          <img src="./imagenes/IMG_8688.jpeg" alt="Valeria Pérez Mondragón" /> <!-- Foto de Valeria -->
+        </div>
 
-    <main>
-        <section>
-            <h1>Primer página web</h1>
-            <p>Este párrafo está dentro de una sección.</p>
-        </section>
+        <div> <!-- Datos personales -->
+          <h1 class="profile_name"> <!-- Nombre completo -->
+            <span class="profile_name_firstName">Valeria</span> <!-- Nombre -->
+            <span class="profile_name_lastName">Pérez Mondragón</span> <!-- Apellidos -->
+          </h1>
+          <p class="profile_title">Estudiante</p> <!-- Título corto -->
+          <p class="description profile_description"> <!-- Descripción breve -->
+             Soy estudiante de la Licenciatura en Contaduría en la Universidad Nacional Autónoma de México (UNAM), generación 2023-2027. Apasionada por la tecnología, he complementado mi formación con cursos en desarrollo web, programación y análisis de datos.
+             Me interesa especialmente el área cuantitativa de las finanzas, donde busco combinar mis conocimientos contables con herramientas tecnológicas para resolver problemas reales de negocio.
+          </p>
+          <a class="downloadBtn" href="./cv.pdf" download="Valeria_Perez_CV.pdf">Descargar CV</a> <!-- Botón para descargar el CV -->
+        </div>
+      </div>
+    </div>
 
-        <h2>Formulario</h2>
-        <form>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
-            <input type="email" id="email" name="email" placeholder="ejemplo@ej.com" />
-            <input type="password" id="password" name="password" placeholder="Contraseña" />
-            <input type="submit" value="Enviar" />
-        </form>
+    <div class="columns"> <!-- Contenedor de columnas para dividir secciones -->
 
-        <h3>¿Cómo se creó este formulario?</h3>
-        <pre><code>
-&lt;form&gt;
-    &lt;input type="text" id="nombre" name="nombre" placeholder="Tu nombre"&gt;&lt;br&gt;
-    &lt;input type="email" id="email" name="email" placeholder="ejemplo@ej.com"&gt;&lt;br&gt;
-    &lt;input type="password" id="password" name="password" placeholder="Contraseña"&gt;&lt;br&gt;
-    &lt;input type="submit" value="Enviar"&gt;
-&lt;/form&gt;
-        </code></pre>
-    </main>
+      <div class="group-1"> <!-- Primera columna (izquierda)-->
+        <div class="skills"> <!-- Sección de habilidades -->
+          <h3 class="title">Skills</h3>
+          <ul class="skills_list description"> <!-- Lista de habilidades técnicas -->
+            <li>Python</li>
+            <li>Excel</li>
+            <li>HTML CSS</li>
+            <li>SQL</li>
+            <li>Git</li>
+          </ul>
+        </div>
 
-    <footer>
-        <p>© 2025 Mi primera página web</p>
-    </footer>
+        <div class="skills"> <!-- Sección de habilidades técnicas específicas -->
+          <h3 class="title">Habilidades Técnicas</h3>
+          <ul class="skills_list description">
+            <li>Modelado financiero básico</li>
+            <li>Mercados Financieros</li>
+            <li>Matemáticas Financieras</li>
+            <li>Instrumentos financieros derivados</li>
+          </ul>
+        </div>
 
+        <div class="ref"> <!-- Sección de idiomas -->
+          <h3 class="title">Idiomas</h3>
+          <div class="ref_item"> <!-- Español -->
+            <h4 class="ref_name">Español</h4>
+            <p class="description">Nativo</p>
+          </div>
+          <div class="ref_item"> <!-- Inglés -->
+            <h4 class="ref_name">Inglés (B2)</h4>
+            <p class="description">Nivel intermedio-avanzado...</p>
+          </div>
+        </div>
+
+        <div class="edu"> <!-- Sección de educación -->
+          <h3 class="title">Educación</h3>
+          <div class="edu_item"> <!-- Item de educación -->
+            <p class="item_preTitle">2023 - 2027</p> <!-- Fechas -->
+            <h4 class="item_title">Licenciatura en Contaduría</h4> <!-- Carrera -->
+            <p class="item_subtitle">UNAM</p> <!-- Universidad -->
+          </div>
+        </div>
+
+        <div class="certification"> <!-- Sección de certificaciones -->
+          <h3 class="title">Certificaciones</h3>
+          <div class="certification_item"> <!-- Certificación 1 -->
+            <p class="item_preTitle">2024</p>
+            <h4 class="item_title">Tecnolochicas - Ciencia de Datos</h4>
+             <p class="description">
+              Acreditación obtenida a través de Acreditta. <!-- Direcciona a la página -->
+              <a href="https://www.acreditta.com/credential/f4b62523-9674-4532-b094-2da8807ec710" target="_blank">Ver credencial</a>
+            </p>
+          </div>
+          <div class="certification_item"> <!-- Certificación 2 -->
+            <p class="item_preTitle">2024</p>
+            <h4 class="item_title">Git - Github</h4> 
+            <p class="description">
+              Acreditación obtenida a través de Udemy.  <!-- Direcciona a la página -->
+              <a href="http://ude.my/UC-b9528619-219f-41b0-bb75-ada8ec7ccd9e" target="_blank">Ver credencial</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="group-2"> <!-- Segunda columna -->
+        <div class="exp"> <!-- Sección de experiencia -->
+          <h3 class="title">Experiencia</h3>
+
+          <div class="exp_item"> <!-- Experiencia 1 -->
+            <p class="item_preTitle">2025</p>
+            <h4 class="item_title">Proyecto ANALISIS DE DATOS</h4>
+            <p class="item_subtitle">Trabajo Buddies (PROTECSA)</p>
+            <p class="description">
+            Este proyecto se enfoca en la resolución de 7 ejercicios de diferentes áreas mediante el análisis de datos.
+            </p>
+          </div>
+
+          <div class="exp_item"> <!-- Experiencia 2 -->
+              <p class="item_preTitle">2025</p>
+            <h4 class="item_title">Derivados Financieros (Python)</h4>
+            <p class="item_subtitle">Clase Métodos Cuantitativos de Finanzas</p>
+            <p class="description">
+              Evaluación de Forwards sobre tipo de cambio (Fx) con Interpolación lineal.
+            </p>
+          </div>
+
+          <div class="exp_item"> <!-- Experiencia 3 -->
+             <p class="item_preTitle">2024</p>
+            <h4 class="item_title">Proyecto de Análisis de Datos</h4>
+            <p class="item_subtitle">Tecnolochicas PRO</p>
+            <p class="description">
+              Realicé análisis exploratorio de datos sobre tendencias musicales utilizando Python y pandas, creando gráficos con seaborn y reportes en Google Colab para prácticas de storytelling de datos.
+            </p>
+          </div>
+
+          <div class="exp_item"> <!-- Experiencia 4 -->
+            <p class="item_preTitle">2025</p>
+            <h4 class="item_title">Terminal interactiva en Bash</h4>
+            <p class="item_subtitle">Trabajo Buddies (PROTECSA)</p>
+            <p class="description">
+              Terminal interactiva desarrollada en Bash que permite al usuario acceder a diferentes funciones como consultar información del sistema, ver la fecha y hora actual, buscar archivos y más.
+            </p>
+          </div>
+        </div>
+
+        <div class="awards"> <!-- Sección de intereses académicos -->
+          <h3 class="title">Intereses Académicos</h3>
+          <ul class="description"> <!-- Lista de intereses -->
+            <li> Finanzas cuantitativas y modelado financiero con Python</li>
+            <li>Análisis de datos financieros</li>
+            <li>Mercados financieros e instrumentos derivados,</li>
+            <li>SQL para análisis de tendencias financieras</li>
+          </ul>
+        </div>
+
+        <div class="interest"> <!-- Sección de intereses personales -->
+          <h3 class="title">Intereses Personales</h3>
+          <div class="interest_items"> <!-- Contenedor de intereses -->
+            <a href="https://open.spotify.com/playlist/3t20xdlYb1m6JpHZw8U2YE?si=CUd5rhxYQM6YhUyD3wzS8A&pi=saM7_IXQTCurO" target="_blank" class="interest_item">  <!-- Direcciona a la página -->
+              <i data-feather="music"></i>
+              <span>Música</span>
+            </a>
+            <a href="https://www.goodreads.com/friend/i?feature=friend-invite-url&invite_token=ZGVkMWE4OTgtMTc0Zi00MWRlLTkzOWYtMDk2NDBjY2NkZWE2" target="_blank" class="interest_item"> <!-- Direcciona a la página -->
+              <i data-feather="book"></i>
+              <span>Lectura</span>
+            </a>
+            <a href="https://www.youtube.com/@XuanLanYoga" target="_blank" class="interest_item"><!-- Direcciona a la página -->
+              <i data-feather="heart"></i>
+              <span>Yoga</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr /> <!-- Línea divisoria -->
+
+    <div class="group-3"> <!-- Sección de contacto y redes -->
+      <div class="contact"> <!-- Información de contacto -->
+        <h3 class="title">Contacto</h3>
+        <div class="contact_info">
+          <p class="description">Ciudad de México (CDMX)</p>
+          <p class="description">+52 55 74789748</p>
+          <p class="description">valeriapmondragon567@gmail.com</p>
+        </div>
+      </div>
+      <div class="social"> <!-- Sección de redes sociales -->
+        <h3 class="title">Redes Sociales</h3>
+        <div class="social_items">
+           <a href="https://github.com/Vapemo" target="_blank" class="social_item"> <!-- Direcciona a la página -->
+            <i data-feather="github"></i>
+            <span>@Vapemo</span>
+          </a>
+         <a href="https://www.instagram.com/vapemo22" target="_blank" class="social_item"> <!-- Direcciona a la página -->
+            <i data-feather="instagram"></i>
+            <span>@vapemo22</span>
+          </a>
+          <a href="https://www.linkedin.com/in/valeria-pérez-381893274/" target="_blank" class="social_item"> <!-- Direcciona a la página -->
+            <i data-feather="linkedin"></i>
+            <span>valeria-pérez-381893274</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="toggle-theme" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 16px; background-color: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; z-index: 1000;">
+  Cambiar tema
+</button>
+
+  <script>
+    feather.replace(); // Activa los íconos de Feather en toda la página
+  </script>
 </body>
 </html>
-
